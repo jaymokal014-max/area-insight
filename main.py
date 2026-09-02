@@ -1,3 +1,20 @@
+import os
+import requests
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows anyone on the web to access your backend API
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Pull the secret API key securely from environment variables
+API_KEY = os.getenv("579b464db66ec23bdd000001365db392248f471c7aa2fe900d555633")
 import React, { useState, useMemo, useEffect } from 'react';
 import { Shield, AlertTriangle, TrendingUp, TrendingDown, Users, CheckCircle, Search, Volume2, VolumeX, Globe, Mic, ThumbsUp, PhoneCall, MessageCircle, PhoneOff, Lightbulb, Activity, MapPin, MessageSquare, PlusSquare, Smartphone, ShieldCheck, Car, Laptop, Loader2, Database } from 'lucide-react';
 
